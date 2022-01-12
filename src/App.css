@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+/* English + number font */
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/chakrapetch/v4/cIflMapbsEk7TDLdtEz1BwkeNIh1U5_F7AY.woff2)
+    format("woff2");
+  unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Korean font */
+@font-face {
+  font-family: "Gowun Dodum";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/gowundodum/v5/3Jn5SD_00GqwlBnWc1TUJF0AFPJJ3oAcQhA685dKXogXvvOvaew.0.woff2)
+    format("woff2");
+  unicode-range: U+AC00-D7AF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Chakra Petch", "Gowun Dodum", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home,
+.bulkup,
+.plan {
   display: flex;
-  flex-direction: column;
+  height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 3rem;
 }
