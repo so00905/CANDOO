@@ -33,17 +33,16 @@ function Navbar() {
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton> */}
-          <img
-            className="logo"
-            alt="logo"
-            src={require("../../images/candoo_row.png")}
-          />
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineLeft />
+                <img
+                  className="logo"
+                  alt="logo"
+                  src={require("../../images/candoo186x32_v2.png")}
+                />
               </Link>
             </li>
             {SidebarData.map((item, index) => {

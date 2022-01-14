@@ -40,9 +40,9 @@ import Tables from "./components/Tables";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import React from "react";
 
 const routes = [
-  
   {
     type: "collapse",
     name: "Tables",
@@ -51,7 +51,6 @@ const routes = [
     route: "/tables",
     component: <Tables />,
   },
-  
 ];
 
 export default routes;
