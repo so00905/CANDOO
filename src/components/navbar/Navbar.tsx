@@ -22,17 +22,6 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          {/* <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                // sx={navbarMobileMenu}
-                // onClick
-              >
-                <Icon sx={{ color: pink[500] }} fontSize="medium">
-                  {miniSidenav ? "menu_open" : "menu"}
-                </Icon>
-              </IconButton> */}
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>

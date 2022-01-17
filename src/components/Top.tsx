@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import Box from "@mui/material/Box";
+import { BsPersonSquare } from "react-icons/bs";
+import { Container } from "@mui/material";
 
 class Top extends Component {
   render() {
     return (
       <div>
-        <Box padding={3}>top</Box>
+        <Container fixed={true} className="top">
+          <BsPersonSquare /> 계정
+        </Container>
       </div>
     );
   }
