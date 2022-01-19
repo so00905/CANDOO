@@ -76,3 +76,7 @@
 span {
   margin-left: 16px;
 }
+
+.nav-link-active {
+  background-color: aqua;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import Icon from "@mui/material/Icon";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "../../assets/Navbar.css";
 import { IconContext } from "react-icons";
@@ -19,28 +19,33 @@ function Navbar() {
     <>
       <IconContext.Provider value={{ color: "#2c2b2b" }}>
         <div className="navbar">
-          <Link to="#" className="menu-bars">
+          <NavLink to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+          </NavLink>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
-              <Link to="#" className="menu-bars">
+              <NavLink to="#" className="menu-bars">
                 <img
                   className="logo"
                   alt="logo"
                   src={require("../../images/candoo186x32_v2.png")}
                 />
-              </Link>
+              </NavLink>
             </li>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "nav-link-active" : ""
+                    }
+                    to={item.path}
+                  >
                     {item.icon}
                     <span>{item.title}</span>
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}
