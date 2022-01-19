@@ -42,6 +42,7 @@
 
 .top {
   display: flex;
+  align-content: right;
 }
 
 .slider {

@@ -14,7 +14,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Top />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/bulkup" element={<BulkUp />} />

@@ -78,5 +78,6 @@ span {
 }
 
 .nav-link-active {
-  background-color: aqua;
+  background-color: #67808b;
+  color: white !important;
 }
