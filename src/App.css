@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;400;700;900&display=swap");
 /* English + number font */
 @font-face {
   font-family: "Chakra Petch";
@@ -14,11 +14,11 @@
 
 /* Korean font */
 @font-face {
-  font-family: "Gowun Dodum";
+  font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/gowundodum/v5/3Jn5SD_00GqwlBnWc1TUJF0AFPJJ3oAcQhA685dKXogXvvOvaew.0.woff2)
+  src: url(https://fonts.gstatic.com/s/notosanskr/v21/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2)
     format("woff2");
   unicode-range: U+AC00-D7AF;
 }
@@ -27,7 +27,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Chakra Petch", "Gowun Dodum", sans-serif;
+  font-family: "Chakra Petch", "Noto Sans KR", sans-serif;
 }
 
 .home,
@@ -45,6 +45,7 @@
   align-content: right;
 }
 
+/* slide css */
 .slider {
   position: relative;
   height: 60vh;
@@ -54,8 +55,7 @@
 }
 
 .image {
-  width: 1000px;
-  height: 600px;
+  width: 50%;
   border-radius: 10px;
 }
 
@@ -89,4 +89,58 @@
   opacity: 1;
   /* transition-duration: 1s; */
   transform: scale(1);
+}
+
+/* footer css */
+
+.foot-div {
+  padding: 80px 60px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.foot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.foot-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 20px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+.foot-link {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.foot-link.a:hover {
+  color: green;
+  transition: 200ms ease-in;
+}
+
+.foot-header {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: bold;
 }

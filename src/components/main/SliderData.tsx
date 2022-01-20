@@ -4,8 +4,8 @@ import training03 from "../../images/fitness/training03.jpg";
 import training04 from "../../images/fitness/training04.jpg";
 
 export const SliderData = [
-  { image: training01 },
-  { image: training02 },
-  { image: training03 },
-  { image: training04 },
+  { url: training01 },
+  { url: training02 },
+  { url: training03 },
+  { url: training04 },
 ];

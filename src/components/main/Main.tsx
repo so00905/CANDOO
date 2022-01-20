@@ -4,10 +4,6 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 
 import Container from "@mui/material/Container";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 
 import Top from "../Top";
 import ImageSlider from "./ImageSlider";
@@ -18,7 +14,16 @@ function Main() {
     <>
       <div>
         <Container>
-          <ImageSlider slides={SliderData} />
+          <div>
+            <SimpleImageSlider
+              width={"50%"}
+              height={"30%"}
+              images={SliderData}
+              showBullets={true}
+              showNavs={true}
+              autoPlay={true}
+            />
+          </div>
         </Container>
       </div>
     </>

@@ -1,30 +1,12 @@
 import React, { useState } from "react";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import SimpleImageSlider from "react-simple-image-slider/dist/ImageSlider";
 import { SliderData } from "./SliderData";
 
-interface Props {
-  slides: any[];
-}
-
-const ImageSlider: React.FC<Props> = ({ slides }) => {
-  console.log(slides.length);
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
-
+function ImageSlider() {
   return (
     <section className="slider">
-      <BsChevronLeft className="left-arrow" onClick={prevSlide} />
+      {/* <BsChevronLeft className="left-arrow" onClick={prevSlide} />
       <BsChevronRight className="right-arrow" onClick={nextSlide} />
 
       {SliderData.map((slide, index) => {
@@ -38,9 +20,9 @@ const ImageSlider: React.FC<Props> = ({ slides }) => {
             )}
           </div>
         );
-      })}
+      })} */}
     </section>
   );
-};
+}
 
 export default ImageSlider;
