@@ -4,7 +4,7 @@ import { SidebarData } from "./SidebarData";
 import "../../assets/Navbar.css";
 import { IconContext } from "react-icons";
 
-import * as FaIcons from "react-icons/fa";
+import * as BsIcons from "react-icons/bs";
 import Top from "../Top";
 
 function Navbar() {
@@ -13,11 +13,10 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
-      <Top />
       <IconContext.Provider value={{ color: "#2c2b2b" }}>
-        <div className="navbar">
+        <div className="navbar" style={{ margin: "0.5% -5% 0 0" }}>
           <NavLink to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+            <BsIcons.BsJustify onClick={showSidebar} />
           </NavLink>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>

@@ -4,8 +4,8 @@
 
 .navbar {
   background-color: none;
-  height: 80px;
-  display: flex;
+  /* height: 80px; */
+  /* display: flex; */
   justify-content: start;
   align-items: canter;
 }

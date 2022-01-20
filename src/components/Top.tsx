@@ -7,21 +7,21 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { BsSearch } from "react-icons/bs";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import Navbar from "./navbar/Navbar";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: "#fff",
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.white, 0.5),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -83,22 +83,14 @@ function Top() {
     <AppBar position="static" style={{ background: "#d8e9f0" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img
-            alt="logo"
-            src={require("../images/candoo186x32.png")}
-            style={{ margin: "0 10% 0 -15%" }}
-          />
-          <Search>
-            <SearchIconWrapper>
-              <BsSearch color="black" />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-              style={{ color: "black" }}
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "block" } }}>
+            <img
+              alt="logo"
+              src={require("../images/candoo186x32.png")}
+              style={{ margin: "0 10% 0 -10%" }}
             />
-          </Search>
-          ,
+          </Box>
+
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -127,14 +119,13 @@ function Top() {
               }}
             ></Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            LOGO
-          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <BsSearch color="black" />
+            </SearchIconWrapper>
+            <StyledInputBase placeholder="Search…" style={{ color: "black" }} />
+          </Search>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -164,6 +155,7 @@ function Top() {
               ))}
             </Menu>
           </Box>
+          <Navbar />
         </Toolbar>
       </Container>
     </AppBar>
