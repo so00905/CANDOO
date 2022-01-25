@@ -12,24 +12,29 @@ import MenuItem from "@mui/material/MenuItem";
 import { BsSearch } from "react-icons/bs";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import Navbar from "./navbar/Navbar";
+import { NavLink } from "react-router-dom";
+import "../assets/Navbar.css";
+
+import { AppbarData } from "./navbar/AppbarData";
+import "../assets/App.css";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: "5px",
   backgroundColor: "#fff",
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.5),
+    backgroundColor: alpha("#fff", 0.5),
   },
   marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
+  marginLeft: theme.spacing(10),
+  width: "150px",
+  // height: "30px",
+  // [theme.breakpoints.up("sm")]: {
+  //   marginLeft: theme.spacing(3),
+  //   width: "auto",
+  // },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -53,6 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
       width: "20ch",
     },
+    fontSize: "12px",
   },
 }));
 
@@ -80,85 +86,102 @@ function Top() {
   };
 
   return (
-    <AppBar position="static" style={{ background: "#d8e9f0" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "block" } }}>
-            <img
-              alt="logo"
-              src={require("../images/candoo186x32.png")}
-              style={{ margin: "0 10% 0 -10%" }}
-            />
-          </Box>
+    <Container
+      style={{ backgroundColor: "#455b6a", boxShadow: "0", width: "100vw" }}
+    >
+      <Toolbar disableGutters>
+        <Box>
+          <img
+            alt="logo"
+            src={require("../images/candoo186x32_white.png")}
+            style={{ margin: "0 10% 0 -10%" }}
+          />
+        </Box>
+        <Box>
+          <ul className="top-items-ul">
+            {AppbarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "nav-link-active" : ""
+                    }
+                    to={item.path}
+                  >
+                    <span>{item.title}</span>
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            ></IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            ></Menu>
-          </Box>
-          <Search>
-            <SearchIconWrapper>
-              <BsSearch color="black" />
-            </SearchIconWrapper>
-            <StyledInputBase placeholder="Search…" style={{ color: "black" }} />
-          </Search>
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          ></IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: "block", md: "none" },
+            }}
+          ></Menu>
+        </Box>
+        <Search>
+          <SearchIconWrapper>
+            <BsSearch size="12" />
+          </SearchIconWrapper>
+          <StyledInputBase placeholder="Search" style={{ color: "black" }} />
+        </Search>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Navbar />
-        </Toolbar>
-      </Container>
-    </AppBar>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "45px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Toolbar>
+    </Container>
   );
 }
 

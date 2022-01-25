@@ -45,8 +45,8 @@
 
 .nav-text a {
   text-decoration: none;
-  color: #2c2b2b;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 15px;
   width: 95%;
   height: 100%;
   display: flex;
@@ -56,8 +56,9 @@
 }
 
 .nav-text a:hover {
-  background-color: #507483;
-  color: aliceblue;
+  color: #ffffff;
+  text-decoration: underline;
+  transition: 200ms ease-in;
 }
 
 .nav-menu-items {
@@ -71,10 +72,6 @@
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-span {
-  margin-left: 16px;
 }
 
 .nav-link-active {
