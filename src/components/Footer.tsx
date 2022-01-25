@@ -2,7 +2,7 @@ import React from "react";
 import {
   Box,
   Container,
-  Row_content,
+  Row_Content,
   Row_service,
   Column,
   FooterLink,
@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <Box style={{ borderTop: "1px solid #ededed" }}>
       <Container>
-        <Row_content>
+        <Row_Content>
           <Column>
             <Heading href="/">CANDOO</Heading>
             <FooterLink href="/shop">위캔두</FooterLink>
@@ -21,7 +21,7 @@ const Footer = () => {
             <FooterLink href="#">입니다</FooterLink>
           </Column>
           <Column>
-            <Heading>1rem측정</Heading>
+            <Heading>1RM측정</Heading>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
@@ -58,7 +58,7 @@ const Footer = () => {
             <FooterLink href="#">Uttar Pradesh</FooterLink>
             <FooterLink href="#">Ahemdabad</FooterLink>
           </Column>
-        </Row_content>
+        </Row_Content>
       </Container>
       <Container>
         <Row_service>

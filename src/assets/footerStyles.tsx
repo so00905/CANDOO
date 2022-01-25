@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Box = styled.div`
   padding: 40px 0;
   background: #fff;
-  position: absolute;
   bottom: 0;
   width: 100%;
+  display: block;
 `;
 
 export const Container = styled.div`
@@ -23,7 +23,7 @@ export const Column = styled.div`
   text-align: left;
 `;
 
-export const Row_content = styled.div`
+export const Row_Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   grid-gap: 20px;
