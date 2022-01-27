@@ -13,7 +13,8 @@ import Slide from "./Slide";
 
 const CardContainer = styled.div`
   width: 1100px;
-  height 368px;
+  height 400px;
+  margin-top:50px;
   display: flex;
   border-radius: 26px;
   position: relative;
@@ -27,7 +28,10 @@ const SliderImg = styled.img`
   border-bottom-left-radius: 25px;
 `;
 
-const ImgSection = styled.div``;
+const CarouselSection = styled.div`
+  width: 100%;
+  height: 400px;
+`;
 
 function Main() {
   const [current, setCurrent] = useState(0);
@@ -45,18 +49,9 @@ function Main() {
     <>
       <Container className="main-container">
         <CardContainer>
-          <div style={{ width: "100%", height: "100%" }}>
-            {/* <Carousel>
-              {SliderData.map((data, index) => {
-                return (
-                  <ImgSection>
-                    <SliderImg src={data.url} alt={data.Caption} />
-                  </ImgSection>
-                );
-              })}
-            </Carousel> */}
+          <CarouselSection>
             <Slide />
-          </div>
+          </CarouselSection>
         </CardContainer>
       </Container>
     </>

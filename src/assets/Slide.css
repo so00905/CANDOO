@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
 
 .Banner {
-  height: 360px;
+  height: 395px;
   position: relative;
 }
 .Banner .Media {
@@ -40,7 +40,7 @@
 }
 .Banner .Content {
   color: white;
-  background-color: #d7c6963d;
+  background-color: #d7d7d738;
   height: 100%;
   position: relative;
   cursor: pointer;
@@ -59,12 +59,12 @@
 .Banner .Content .Title {
   font-family: "Noto Sans KR";
   font-size: xx-large;
-  font-weight: 500;
+  font-weight: 800;
   color: #000;
 }
 .Banner .Content .Caption {
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 20px;
   color: #000;
   font-weight: 600;
   font-family: "Noto Sans KR";

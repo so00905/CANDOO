@@ -83,6 +83,9 @@ const Banner = (props: BannerProps) => {
   const mediaLength = totalItems - 1;
 
   let items = [];
+  function startBtn(e: any) {
+    window.location.href = "/bulkup";
+  }
   const content = (
     <Grid item xs={4} key="content">
       <CardContent className="Content">
@@ -90,7 +93,7 @@ const Banner = (props: BannerProps) => {
 
         <Typography className="Caption">{props.item.Caption}</Typography>
 
-        <Button variant="outlined" className="ViewButton">
+        <Button variant="outlined" className="ViewButton" onClick={startBtn}>
           시작하기
         </Button>
       </CardContent>
@@ -131,7 +134,7 @@ const Banner = (props: BannerProps) => {
 const items: Item[] = [
   {
     Name: "정장도 맞춤!안경도 맞춤!신발도 맞춤!",
-    Caption: "캔두에서 운동을 '맞춤'해요",
+    Caption: "캔두에서 운동'맞춤'을 시작해보세요",
     contentPosition: "left",
     Items: [
       {
@@ -146,8 +149,9 @@ const items: Item[] = [
   },
 
   {
-    Name: "Decoratives",
-    Caption: "Give style and color to your living room!",
+    Name: "운동 않화쉐요?",
+    Caption:
+      "맞춤법이 거슬리시나요? {'\n'} 그렇다면 지금바로 캔두와 함께 맞춤운동을 시작할 때!",
     contentPosition: "right",
     Items: [
       {
