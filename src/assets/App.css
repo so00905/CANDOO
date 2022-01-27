@@ -46,6 +46,7 @@
 
 .main-container {
   min-height: calc(100vh - 180px);
+  width: 100%;
 }
 
 /* top css */
