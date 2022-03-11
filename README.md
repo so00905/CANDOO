@@ -59,8 +59,10 @@ TypeScript, axios
     
  3. 💻 홈화면
  
-    -⚡ 벌크업(1RM)
-    -⚡ 운동plan Calendar
-    -⚡ 운동용품&식품 shop
+       - ⚡ 벌크업(1RM)
+
+       - ⚡ 운동plan Calendar
+
+       - ⚡ 운동용품&식품 shop
 
 
