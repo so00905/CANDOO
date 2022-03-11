@@ -38,7 +38,7 @@ TypeScript, axios
 - useState
 - useEffect
 
-### 💡 back ( Spring boot )
+### 💡 back
 
 - axios
 - http-proxy-middleware
